@@ -1,17 +1,23 @@
 buildscript {
     repositories {
-        jcenter()
+        //jcenter()
+        //下载auto-value(在项目的 Gradle 文件里，配置国内源（将 jcenter（）注掉或者删掉)
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.0'
+        classpath 'com.android.tools.build:gradle:3.2.1'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
 allprojects {
     repositories {
-        jcenter()
+        //jcenter()
+        //下载auto-value(在项目的 Gradle 文件里，配置国内源（将 jcenter（）注掉或者删掉)
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
         google()
     }
 }

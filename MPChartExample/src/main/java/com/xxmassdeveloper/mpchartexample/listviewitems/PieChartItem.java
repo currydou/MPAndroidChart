@@ -78,6 +78,7 @@ public class PieChartItem extends ChartItem {
         l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
         l.setOrientation(Legend.LegendOrientation.VERTICAL);
         l.setDrawInside(false);
+        l.setXOffset(40f);//图例x的偏移量
         l.setYEntrySpace(0f);
         l.setYOffset(0f);
 

@@ -8,7 +8,6 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.core.content.ContextCompat;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
@@ -38,6 +37,8 @@ import com.xxmassdeveloper.mpchartexample.notimportant.DemoBase;
 
 import java.util.ArrayList;
 
+import androidx.core.content.ContextCompat;
+
 public class PieChartActivity extends DemoBase implements OnSeekBarChangeListener,
         OnChartValueSelectedListener {
 
@@ -60,30 +61,38 @@ public class PieChartActivity extends DemoBase implements OnSeekBarChangeListene
         seekBarX = findViewById(R.id.seekBar1);
         seekBarY = findViewById(R.id.seekBar2);
 
+        //监听
         seekBarX.setOnSeekBarChangeListener(this);
         seekBarY.setOnSeekBarChangeListener(this);
 
         chart = findViewById(R.id.chart1);
+        //图表里面的百分比
         chart.setUsePercentValues(true);
         chart.getDescription().setEnabled(false);
         chart.setExtraOffsets(5, 10, 5, 5);
 
         chart.setDragDecelerationFrictionCoef(0.95f);
 
+        //中间文字的样式
         chart.setCenterTextTypeface(tfLight);
         chart.setCenterText(generateCenterSpannableText());
 
+        //中间的孔
         chart.setDrawHoleEnabled(true);
         chart.setHoleColor(Color.WHITE);
 
+        //透明的圆的颜色
         chart.setTransparentCircleColor(Color.WHITE);
         chart.setTransparentCircleAlpha(110);
 
+        //孔的半径
         chart.setHoleRadius(58f);
         chart.setTransparentCircleRadius(61f);
 
+        //中间的文字
         chart.setDrawCenterText(true);
 
+        //旋转角度
         chart.setRotationAngle(0);
         // enable rotation of the chart by touch
         chart.setRotationEnabled(true);
@@ -92,7 +101,7 @@ public class PieChartActivity extends DemoBase implements OnSeekBarChangeListene
         // chart.setUnit(" €");
         // chart.setDrawUnitsInChart(true);
 
-        // add a selection listener
+        // 选中监听
         chart.setOnChartValueSelectedListener(this);
 
         seekBarX.setProgress(4);
@@ -110,7 +119,7 @@ public class PieChartActivity extends DemoBase implements OnSeekBarChangeListene
         l.setYEntrySpace(0f);
         l.setYOffset(0f);
 
-        // entry label styling
+        // entry label styling 标签样式
         chart.setEntryLabelColor(Color.WHITE);
         chart.setEntryLabelTypeface(tfRegular);
         chart.setEntryLabelTextSize(12f);
